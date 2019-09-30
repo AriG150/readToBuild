@@ -1,0 +1,118 @@
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 150px 1fr 200px 25px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:    "buttons   header    header    allImages"
+                            "imagePart imagePart imagePart imagePart "
+                            "words     words     words     words"
+                            "footer    footer    footer    footer"
+}
+
+
+
+
+h1{
+    grid-area: header;
+    color: purple;
+    background-color: orange;
+    text-align: center;
+}
+
+#buttons{
+    grid-area: buttons;
+    background-color: red;
+}
+
+#allImages{
+    grid-area: allImages;
+    background-color: yellow;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#imagePart{
+    grid-area: imagePart;
+    background-color: green;
+
+}
+
+#words{
+    grid-area: words;
+    background-color: blue;
+    display: inline-block;
+    color: white;
+}
+
+footer{
+    grid-area: footer;
+    background-color: rgb(214, 40, 214);
+}
+
+/* button{
+    background-color: #ccc;
+    border: none;
+    color: #2196F3;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+}  */
+
+
+/* The switch - the box around the slider */
+/* .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 34px;
+} */
+
+  /* Hide default HTML checkbox */
+/* .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+} */
+
+  /* The slider */
+/* .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}  */
+
+
