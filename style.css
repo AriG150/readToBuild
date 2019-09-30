@@ -19,31 +19,47 @@ h1{
     text-align: center;
 }
 
-#buttons{
+.buttons{
     grid-area: buttons;
     background-color: red;
 }
 
-#allImages{
+.allImages{
     grid-area: allImages;
     background-color: yellow;
-    display: block;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px;
+    width: 2px;
 
 }
 
-#imagePart{
+.imagePart{
     grid-area: imagePart;
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.178);
+    text-align: 
 
 }
 
-#words{
+.words{
     grid-area: words;
     background-color: blue;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.individualWord{
+    width: calc(100%/4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
+    font-size: 40px;
 }
 
 footer{
