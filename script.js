@@ -2,19 +2,19 @@ console.log("Hello world");
 
 //Global Variables
 var level = 0;
-var answer = 0;
+var task = 0;
 
 // Word Choices per round and per Level 
 const level1 = {
-    answer1: {
+    task1: {
         correct: 'door',
         incorrect: ['dog', 'day', 'down',]
     },
-    answer2: {
+    task2: {
         correct: 'window',
         incorrect: ['white', 'when', 'walk',]
     },
-    answer3: {
+    task3: {
         correct: 'roof',
         incorrect: ['red', 'run', 'read']
     }
@@ -22,8 +22,8 @@ const level1 = {
 
 //DOM references //
 var allImages = document.getElementsByClassName("allImages");
-var allImageGoal = document.getElementById("allImageGoal");
-var imageGoal = document.getElementById("imageGoal");
+var allImageRight = document.getElementById("allImageRight");
+var imageCenter = document.getElementById("imageCenter");
 var doorImage = document.getElementById("doorImage");
 var words = document.getElementsByClassName("words");
 var wordBox = document.getElementById("wordBox");
@@ -42,40 +42,81 @@ startButton.addEventListener('click', init);
 resetButton.addEventListener('click', reset);
 
 //words clickable
+// wordBox.addEventListener('click', function(e){
+//     if (e.target.id === "choice1"){
+//         level1Task2Words();
+//         imageCenter.src = `images/window.png`
+//         allImageRight.src = `images/door.png`
+//         console.log("worked?")
+//     }
+//     //delay of 10 seconts 
+//     //stetch goal of animation 
+//     //check endLevel 
+// });
+
+//Want to accomplish: //
+/*
+    want to impliment a method that will use a counter to determine what the event listener should do
+    start of the game would make level = 1 and task = 1. When user completes the first correct answer
+    task would equal 2. that way I could feed in level1Task2Words and move the correct images in the 
+    correct spot. 
+    //can I add event listeners to a switch statement?
+    // look up usage of the  indexOf() function 
+    //Do I have to put the correct answers in an array. would that impact the manner I retrieve the 
+    words/task options? 
+    //e.target.indexOf()
+*/
+
 wordBox.addEventListener('click', function(e){
-    //if wrong word clicked do nothing
     if (e.target.id === "choice1"){
-        level1Answer2Words();
-        imageGoal.src = `images/window.png`
-        allImageGoal.src = `images/door.png`
-        console.log("worked?")
+        level1TaskIterations();
+        task++
     }
-    //delay of 10 seconts 
-    //stetch goal of animation 
-    //check endLevel 
 });
+
+function level1TaskIterations(){
+    if (task === 1){
+        level1Task1Words();
+        imageCenter.src = `images/door.png`;
+        allImageRight.src = ``;
+    }  else if ( task === 2){
+        level1Task2Words();
+        imageCenter.src = `images/window.png`;
+        allImageRight.src = `images/door.png`;
+    } else if (task === 3){
+        level1Task3Words();
+        imageCenter.src = `images/roof.png`;
+        allImageRight.src = `images/door.png` && `images/window.png`;
+    } else if (task == 4) {
+        imageCenter.src = `images/house.png`;
+        allImageRight.src = `images/door.png` && `images/window.png` && `images/roof.png`;
+        //TODO: make `images/house.png` appear with setInterval 1000 miliseconds
+        task === 0;
+        level === 1;
+    }
+}
 
 //Accessing words per given level  //
 
-function level1Answer1Words(){
-    correctField.textContent = level1.answer1.correct;
-    incorrectField1.textContent = level1.answer1.incorrect[0];
-    incorrectField2.textContent = level1.answer1.incorrect[1];
-    incorrectField3.textContent = level1.answer1.incorrect[2];
+function level1Task1Words(){
+    correctField.textContent = level1.task1.correct;
+    incorrectField1.textContent = level1.task1.incorrect[0];
+    incorrectField2.textContent = level1.task1.incorrect[1];
+    incorrectField3.textContent = level1.task1.incorrect[2];
 }
 
-function level1Answer2Words(){
-    correctField.textContent = level1.answer2.correct;
-    incorrectField1.textContent = level1.answer2.incorrect[0];
-    incorrectField2.textContent = level1.answer2.incorrect[1];
-    incorrectField3.textContent = level1.answer2.incorrect[2];
+function level1Task2Words(){
+    correctField.textContent = level1.task2.correct;
+    incorrectField1.textContent = level1.task2.incorrect[0];
+    incorrectField2.textContent = level1.task2.incorrect[1];
+    incorrectField3.textContent = level1.task2.incorrect[2];
 }
 
-function level1Answer3Words(){
-    correctField.textContent = level1.answer3.correct;
-    incorrectField1.textContent = level1.answer3.incorrect[0];
-    incorrectField2.textContent = level1.answer3.incorrect[1];
-    incorrectField3.textContent = level1.answer3.incorrect[2];
+function level1Task3Words(){
+    correctField.textContent = level1.task3.correct;
+    incorrectField1.textContent = level1.task3.incorrect[0];
+    incorrectField2.textContent = level1.task3.incorrect[1];
+    incorrectField3.textContent = level1.task3.incorrect[2];
 }
 
 
@@ -84,8 +125,9 @@ function level1Answer3Words(){
 
 //Game Init Function//
 function init (){
-    level1Answer1Words();
-    imageGoal.src = `images/door.png`
+    level1Task1Words();
+    imageCenter.src = `images/door.png`
+    task = 1;
 }
 
 //create counter function that increases the level/answer number that corresponds with level1Answer1, level1Answer2 etc
