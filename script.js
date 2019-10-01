@@ -1,6 +1,6 @@
 console.log("Hello world");
 
-// Variables 
+// Word Choices per round and per Level 
 const level1 = {
     answer1: {
         correct: 'door',
@@ -16,11 +16,21 @@ const level1 = {
     }
 }
 
+// imageCenter. false = not appear, true = appear 
+var imageCenter = {
+    door: false,
+    window: false,
+    roof: false,
+    house: false,
+}
 
-//DOM references 
+var allImages = []
+
+//DOM references //
 var allImages = document.getElementsByClassName("allImages");
 var imagePart = document.getElementsByClassName("imagePart");
 var words = document.getElementsByClassName("words");
+var wordBox = document.getElementById("wordBox");
 var toggleLevel = document.getElementsByClassName("switch");
 var resetButton = document.getElementById("reset");
 var correctField = document.getElementById("choice1");
@@ -29,19 +39,67 @@ var incorrectField2 = document.getElementById("choice3");
 var incorrectField3 = document.getElementById("choice4");
 
 
-//setting words 
-function wordPlacement () {
-    level1.answer1.correct = correctField.textContent
-    level1.answer1.incorrect[0] = incorrectField1.textContent
-    level1.answer1.incorrect[1] = incorrectField2.textContent
-    level1.answer1.incorrect[2] = incorrectField3.textContent
-}
+//setting words //
+    function level1Answer1 (){
+        correctField.textContent = level1.answer1.correct;
+        incorrectField1.textContent = level1.answer1.incorrect[0];
+        incorrectField2.textContent = level1.answer1.incorrect[1];
+        incorrectField3.textContent = level1.answer1.incorrect[2];
+    }
 
-// making wods clickable 
+    function level1Answer2(){
+        correctField.textContent = level1.answer2.correct;
+        incorrectField1.textContent = level1.answer2.incorrect[0];
+        incorrectField2.textContent = level1.answer2.incorrect[1];
+        incorrectField3.textContent = level1.answer2.incorrect[2];
+    }
 
-words.addEventListener('click', function(e){
-    wordPlacement();
-    console.log("clicking worked");
+    function level1Answer2(){
+        correctField.textContent = level1.answer3.correct;
+        incorrectField1.textContent = level1.answer3.incorrect[0];
+        incorrectField2.textContent = level1.answer3.incorrect[1];
+        incorrectField3.textContent = level1.answer3.incorrect[2];
+    }
+
+//Game Init Function//
+// answer1Words loaded
+//allImages.length = 0
+// image_door = true 
+// correctField unclicked
+
+
+//words clickable
+wordBox.addEventListener('click', function(e){
+    //if wrong word clicked do nothing
+    if (e.target.id === "choice1"){
+        console.log("worked?")
+    }
+    //if correct word clicked 
+    //remove image door from center 
+    //add image door from top right 
+    // load level two 
+    //delay of 10 seconts 
+    //stetch goal of animation 
+    //check endLevel 
+    
+    // if (!imageCenter[selectImage] && !endLevel){
+    //     e.target.src = `images/${selectImage}.png`;
+    //     imageCenter[selectImage] = true;
+    // }
+});
+
+
+//End Level function // 
+//if array allImage.length is 3 (ie has door, window, and roof) game has finished 
+// elements no longer clickable
+//reset button clickable
+// strech: make pop-up "You've finished the first level. Congradulations. Get ready for level 2!"
+// load second level after 10 seconds 
+
+
+
+resetButton.addEventListener('click', function(e){
+    console.log("test!", e.target.id);
 })
 
 
