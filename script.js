@@ -20,6 +20,21 @@ const level1 = {
     }
 }
 
+const level2 = {
+    task1: {
+        correct: 'chair',
+        incorrect: ['child', 'chain', 'cherry']
+    },
+    task2:{
+        correct: 'desk',
+        incorrect: ['door', 'does', 'deer']
+    },
+    task3:{
+        correct: 'backpack',
+        incorrect: ['become', 'because', 'baloon']
+    }
+}
+
 //DOM references //
 var allImages = document.getElementsByClassName("allImages");
 var allImageRight = document.getElementById("allImageRight");
@@ -72,6 +87,7 @@ resetButton.addEventListener('click', reset);
     //e.target.indexOf()
 */
 
+//Click function. what happens when the correct word is clicked
 wordBox.addEventListener('click', function(e){
     if (e.target.id === "choice1"){
         level1TaskIterations();
@@ -83,27 +99,28 @@ wordBox.addEventListener('click', function(e){
     }
 });
 
+// Level 1 
 function level1TaskIterations(){
-    if (task === 1){
+    if (level === 1 && task === 1){
         level1Task1Words();
         imageCenter.src = `images/door.png`;
         // allImageRight.src = ``;
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
-    }  else if ( task === 2){
+    }  else if (level === 1 && task === 2){
         level1Task2Words();
         imageCenter.src = `images/window.png`;
         doorImage.style.display = 'inline-block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
-    } else if (task === 3){
+    } else if (level === 1 && task === 3){
         level1Task3Words();
         imageCenter.src = `images/roof.png`;
         doorImage.style.display = 'inline-block';
         windowImage.style.display = 'inline-block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
-    } else if (task == 4) {
+    } else if (level ===1 && task == 4) {
         imageCenter.src = `images/house.png`;
         doorImage.style.display = 'inline-block';
         windowImage.style.display = 'inline-block';
@@ -114,6 +131,11 @@ function level1TaskIterations(){
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     }
+}
+
+//Level 2 
+function level2TaskIterations(){
+
 }
 
 //Accessing words per given level  //
@@ -139,6 +161,26 @@ function level1Task3Words(){
     incorrectField3.textContent = level1.task3.incorrect[2];
 }
 
+function level2Task1(){
+    correctField.textContent = level2.task1.correct;
+    incorrectField1.textContent = level2.task1.incorrect[0];
+    incorrectField2.textContent = level2.task1.incorrect[1];
+    incorrectField3.textContent = level2.task1.incorrect[2];
+}
+
+function level2Task2(){
+    correctField.textContent = level2.task2.correct;
+    incorrectField1.textContent = level2.task2.incorrect[0];
+    incorrectField2.textContent = level2.task2.incorrect[1];
+    incorrectField3.textContent = level2.task2.incorrect[2];
+}
+
+function level2Task3(){
+    correctField.textContent = level2.task3.correct;
+    incorrectField1.textContent = level2.task3.incorrect[0];
+    incorrectField2.textContent = level2.task3.incorrect[1];
+    incorrectField3.textContent = level2.task3.incorrect[2];
+}
 
 //Functions//
 
@@ -167,6 +209,14 @@ function init (){
 //reset function
 // pop-up 'Are you sure you want to reset the game?'
 // call init();
+function reset (){
+    imageCenter.src = ``;
+    doorImage.style.display = 'none';
+    windowImage.style.display = 'none';
+    roofImage.style.display = 'none';
+    task = 0;
+    level = 1;
+}
 
 
 
