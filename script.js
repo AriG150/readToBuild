@@ -1,4 +1,3 @@
-console.log("Hello world");
 
 //Global Variables
 var level = 0;
@@ -43,12 +42,14 @@ var doorImage = document.getElementById("door");
 var windowImage = document.getElementById("window");
 var roofImage = document.getElementById("roof");
 
-var words = document.getElementsByClassName("words");
-var wordBox = document.getElementById("wordBox");
-
-var toggleLevel = document.getElementsByClassName("switch");
+var levelUpButton = document.getElementById("levelUp");
 var resetButton = document.getElementById("reset");
 var startButton = document.getElementById("start");
+
+var title = document.getElementById("title");
+
+var words = document.getElementsByClassName("words");
+var wordBox = document.getElementById("wordBox");
 
 var correctField = document.getElementById("choice1");
 var incorrectField1 = document.getElementById("choice2");
@@ -61,53 +62,37 @@ var incorrectField3 = document.getElementById("choice4");
 startButton.addEventListener('click', init);
 resetButton.addEventListener('click', reset);
 
-//words clickable
-// wordBox.addEventListener('click', function(e){
-//     if (e.target.id === "choice1"){
-//         level1Task2Words();
-//         imageCenter.src = `images/window.png`
-//         allImageRight.src = `images/door.png`
-//         console.log("worked?")
-//     }
-//     //delay of 10 seconts 
-//     //stetch goal of animation 
-//     //check endLevel 
-// });
-
-//Want to accomplish: //
-/*
-    want to impliment a method that will use a counter to determine what the event listener should do
-    start of the game would make level = 1 and task = 1. When user completes the first correct answer
-    task would equal 2. that way I could feed in level1Task2Words and move the correct images in the 
-    correct spot. 
-    //can I add event listeners to a switch statement?
-    // look up usage of the  indexOf() function 
-    //Do I have to put the correct answers in an array. would that impact the manner I retrieve the 
-    words/task options? 
-    //e.target.indexOf()
-*/
-
 //Click function. what happens when the correct word is clicked
 wordBox.addEventListener('click', function(e){
-    if (e.target.id === "choice1"){
+    if (e.target.id === "choice1" && level === 1){
         level1TaskIterations();
         task++
-        level = 1;
-        if (task === 4){
-            level++
-        }
+    }
+    else if (e.target.id === "choice1" && level === 2){
+        level2TaskIterations();
+        task++
+        // TODO: if (task == 4){
+        //     gameover();
+        // }
     }
 });
 
+
+levelUpButton.addEventListener('click', function(){
+    level = 2;
+    task = 1;  
+    level2TaskIterations();
+    levelUpButton.style.display = 'none';
+    title.textContent = "Build a Classroom!"
+    doorImage.style.display = 'none';
+        windowImage.style.display = 'none';
+        roofImage.style.display = 'none';
+})
+
+
 // Level 1 
 function level1TaskIterations(){
-    if (level === 1 && task === 1){
-        level1Task1Words();
-        imageCenter.src = `images/door.png`;
-        // allImageRight.src = ``;
-        console.log(`task number is: ${task}`);
-        console.log(`level number is: ${level}`);
-    }  else if (level === 1 && task === 2){
+    if (level === 1 && task === 2){
         level1Task2Words();
         imageCenter.src = `images/window.png`;
         doorImage.style.display = 'inline-block';
@@ -120,14 +105,13 @@ function level1TaskIterations(){
         windowImage.style.display = 'inline-block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
-    } else if (level ===1 && task == 4) {
+    } else if (level === 1 && task == 4) {
         imageCenter.src = `images/house.png`;
         doorImage.style.display = 'inline-block';
         windowImage.style.display = 'inline-block';
         roofImage.style.display = 'inline-block';
         //TODO: make `images/house.png` appear with setInterval 1000 miliseconds
-        task === 0;
-        level === 1;
+        levelUpButton.style.display = 'block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     }
@@ -135,8 +119,26 @@ function level1TaskIterations(){
 
 //Level 2 
 function level2TaskIterations(){
-    if (level === 2 && task === 1)
-
+    if (level === 2 && task === 1){
+        imageCenter.src = ``;
+        level2Task1Words();
+        // levelUpButton.style.display = 'none';
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
+    } else if ( level === 2 && task === 2){
+        level2Task2Words();
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
+    } else if (level === 2 && task === 3){
+        level2Task3Words();
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
+    } else if (level === 2 && task === 4){
+        console.log("where the classroom image is inserted.");
+        console.log("you've finished message");
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
+    }
 }
 
 //Accessing words per given level  //
@@ -164,21 +166,21 @@ function level1Task3Words(){
 }
 
 // level 2 
-function level2Task1(){
+function level2Task1Words(){
     correctField.textContent = level2.task1.correct;
     incorrectField1.textContent = level2.task1.incorrect[0];
     incorrectField2.textContent = level2.task1.incorrect[1];
     incorrectField3.textContent = level2.task1.incorrect[2];
 }
 
-function level2Task2(){
+function level2Task2Words(){
     correctField.textContent = level2.task2.correct;
     incorrectField1.textContent = level2.task2.incorrect[0];
     incorrectField2.textContent = level2.task2.incorrect[1];
     incorrectField3.textContent = level2.task2.incorrect[2];
 }
 
-function level2Task3(){
+function level2Task3Words(){
     correctField.textContent = level2.task3.correct;
     incorrectField1.textContent = level2.task3.incorrect[0];
     incorrectField2.textContent = level2.task3.incorrect[1];
@@ -190,18 +192,15 @@ function level2Task3(){
 
 //Game Init Function//
 function init (){
+    title.textContent = "Build a House!"
     level1Task1Words();
     imageCenter.src = `images/door.png`
-    task = 0;
+    task = 1;
+    level = 1;
+
     console.log(`task number is: ${task}`);
     console.log(`level number is: ${level}`);
 }
-
-//End Level function // 
-//if array allImage.length is 3 (ie has door, window, and roof) game has finished 
-// strech: make pop-up "You've finished the first level. Congradulations. Get ready for level 2!"
-// load second level after 10 seconds 
-
 
 //reset function
 // pop-up 'Are you sure you want to reset the game?'
@@ -211,9 +210,18 @@ function reset (){
     doorImage.style.display = 'none';
     windowImage.style.display = 'none';
     roofImage.style.display = 'none';
-    task = 0;
-    level = 1;
+    // task = 0;
+    // level = 1;
+    console.log(`task number is: ${task}`);
+    console.log(`level number is: ${level}`);
+    //TODO: remove words 
 }
+
+
+//End Level function // 
+//if array allImage.length is 3 (ie has door, window, and roof) game has finished 
+// strech: make pop-up "You've finished the first level. Congradulations. Get ready for level 2!"
+// load second level after 10 seconds 
 
 
 
