@@ -135,11 +135,13 @@ function level1TaskIterations(){
 
 //Level 2 
 function level2TaskIterations(){
+    if (level === 2 && task === 1)
 
 }
 
 //Accessing words per given level  //
 
+//level 1 
 function level1Task1Words(){
     correctField.textContent = level1.task1.correct;
     incorrectField1.textContent = level1.task1.incorrect[0];
@@ -161,6 +163,7 @@ function level1Task3Words(){
     incorrectField3.textContent = level1.task3.incorrect[2];
 }
 
+// level 2 
 function level2Task1(){
     correctField.textContent = level2.task1.correct;
     incorrectField1.textContent = level2.task1.incorrect[0];
@@ -194,14 +197,8 @@ function init (){
     console.log(`level number is: ${level}`);
 }
 
-//create counter function that increases the level/answer number that corresponds with level1Answer1, level1Answer2 etc
-//for every increase of those numbers, create a new function that has an event lister that calls the correct words and images
-
-
 //End Level function // 
 //if array allImage.length is 3 (ie has door, window, and roof) game has finished 
-// elements no longer clickable
-//reset button clickable
 // strech: make pop-up "You've finished the first level. Congradulations. Get ready for level 2!"
 // load second level after 10 seconds 
 
