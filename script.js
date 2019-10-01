@@ -24,12 +24,17 @@ const level1 = {
 var allImages = document.getElementsByClassName("allImages");
 var allImageRight = document.getElementById("allImageRight");
 var imageCenter = document.getElementById("imageCenter");
-var doorImage = document.getElementById("doorImage");
+var doorImage = document.getElementById("door");
+var windowImage = document.getElementById("window");
+var roofImage = document.getElementById("roof");
+
 var words = document.getElementsByClassName("words");
 var wordBox = document.getElementById("wordBox");
+
 var toggleLevel = document.getElementsByClassName("switch");
 var resetButton = document.getElementById("reset");
 var startButton = document.getElementById("start");
+
 var correctField = document.getElementById("choice1");
 var incorrectField1 = document.getElementById("choice2");
 var incorrectField2 = document.getElementById("choice3");
@@ -71,6 +76,10 @@ wordBox.addEventListener('click', function(e){
     if (e.target.id === "choice1"){
         level1TaskIterations();
         task++
+        level = 1;
+        if (task === 4){
+            level++
+        }
     }
 });
 
@@ -78,21 +87,32 @@ function level1TaskIterations(){
     if (task === 1){
         level1Task1Words();
         imageCenter.src = `images/door.png`;
-        allImageRight.src = ``;
+        // allImageRight.src = ``;
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
     }  else if ( task === 2){
         level1Task2Words();
         imageCenter.src = `images/window.png`;
-        allImageRight.src = `images/door.png`;
+        doorImage.style.display = 'inline-block';
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
     } else if (task === 3){
         level1Task3Words();
         imageCenter.src = `images/roof.png`;
-        allImageRight.src = `images/door.png` && `images/window.png`;
+        doorImage.style.display = 'inline-block';
+        windowImage.style.display = 'inline-block';
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
     } else if (task == 4) {
         imageCenter.src = `images/house.png`;
-        allImageRight.src = `images/door.png` && `images/window.png` && `images/roof.png`;
+        doorImage.style.display = 'inline-block';
+        windowImage.style.display = 'inline-block';
+        roofImage.style.display = 'inline-block';
         //TODO: make `images/house.png` appear with setInterval 1000 miliseconds
         task === 0;
         level === 1;
+        console.log(`task number is: ${task}`);
+        console.log(`level number is: ${level}`);
     }
 }
 
@@ -127,7 +147,9 @@ function level1Task3Words(){
 function init (){
     level1Task1Words();
     imageCenter.src = `images/door.png`
-    task = 1;
+    task = 0;
+    console.log(`task number is: ${task}`);
+    console.log(`level number is: ${level}`);
 }
 
 //create counter function that increases the level/answer number that corresponds with level1Answer1, level1Answer2 etc

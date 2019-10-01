@@ -55,6 +55,10 @@ footer{
     justify-content: center;
 }
 
+.hidden{
+    display: none;
+}
+
 .words{
     grid-area: words;
     background-color: blue;
