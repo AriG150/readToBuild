@@ -1,4 +1,5 @@
 body{
+    background-image: linear-gradient(#ccccff, #0636AD);
     display: grid;
     min-height: 100vh;
     grid-template-rows: 150px 1fr 200px 25px;
@@ -11,10 +12,13 @@ body{
 
 
 h1{
+    font-family: 'Mouse Memoirs', sans-serif;
     grid-area: header;
     display: flex;
-    color: purple;
-    background-color: orange;
+    color: rgb(212, 24, 34);
+    outline-color: black;
+    font-size: 6em;
+    /* background-color: orange; */
     text-align: center;
     align-items: center;
     justify-content: space-evenly; 
@@ -22,27 +26,48 @@ h1{
 
 footer{
     grid-area: footer;
-    background-color: rgb(214, 40, 214);
+    /* background-color: rgb(214, 40, 214); */
 }
+
+/* ----- Button Sytling ----- */ 
 
 .buttons{
     grid-area: buttons;
-    background-color: red;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-family: 'Roboto'; 
     text-align: center;
     align-items: center;
 }
 
-#levelUp{
-    display: none;    
+/* start button */ 
+.custom-start-class {
+    color: rgb(247, 0, 247);
+    font-size: 5em;
+    cursor: pointer;
 }
+
+/* reset button */
+.custom-reset-class {
+    color: rgb(223, 4, 4);
+    font-size: 5em;
+    cursor: pointer;
+}
+
+/* level up button */ 
+.custom-level-class{
+    color: rgb(122, 247, 73);
+    font-size: 4em;
+    display: none;
+    cursor: pointer;
+}
+
+
+
+/* ----- Image Styling ----- */ 
 
 .allImages{
     grid-area: allImages;
-    background-color: yellow;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -52,20 +77,22 @@ footer{
 
 .imagePart{
     grid-area: imagePart;
-    background-color: rgba(0, 128, 0, 0.178);
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
+
 
 .hidden{
     display: none;
 }
 
+
+/* ----- Word Styling ----- */ 
 .words{
     grid-area: words;
-    background-color: blue;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,7 +105,8 @@ footer{
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 40px;
+    font-size: 5em;
+    cursor: pointer;
 }
 
 

@@ -33,14 +33,15 @@ const level2 = {
     },
     task3:{
         correct: 'backpack',
-        incorrect: ['become', 'because', 'baloon']
+        incorrect: ['become', 'because', 'balloon']
     }
 }
 
 //DOM references //
-var allImages = document.getElementsByClassName("allImages");
-var allImageRight = document.getElementById("allImageRight");
-var imageCenter = document.getElementById("imageCenter");
+// var allImages = document.getElementsByClassName("allImages");
+// var allImageRight = document.getElementById("allImageRight");
+// var imageCenter = document.getElementById("imageCenter");
+
 var doorImage = document.getElementById("door");
 var windowImage = document.getElementById("window");
 var roofImage = document.getElementById("roof");
@@ -52,6 +53,7 @@ var classroomImage = document.getElementById("classroom");
 var levelUpButton = document.getElementById("levelUp");
 var resetButton = document.getElementById("reset");
 var startButton = document.getElementById("start");
+
 
 var title = document.getElementById("title");
 
@@ -95,6 +97,7 @@ levelUpButton.addEventListener('click', function(){
         windowImage.style.display = 'none';
         roofImage.style.display = 'none';
 })
+
 
 
 // Level 1 
@@ -222,24 +225,9 @@ function init (){
     console.log(`level number is: ${level}`);
 }
 
-//reset function
-// pop-up 'Are you sure you want to reset the game?'
-// call init();
 // function reset (){
-//     title.textContent = "It's time to Build!"
-//     imageCenter.src = `images/door.png`;
-//     level1Task1Words();
-//     task = 1;
-//     level = 1;
-//     levelUpButton.style.display = 'none';
-//     doorImage.style.display = 'none';
-//     windowImage.style.display = 'none';
-//     roofImage.style.display = 'none';
-//     console.log(`task number is: ${task}`);
-//     console.log(`level number is: ${level}`);
-//     //TODO: remove words 
+//     document.location.href= "";
 // }
-
 
 
 

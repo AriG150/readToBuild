@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Read to Build Game </title>
 </head>
 <body>
     <div class="buttons">
-        <!-- <button type="reset" id="reset">Reset</button> -->
-        <button type="text" value="start" id="start">Start!</button>
+        <i class="fa fa-times-circle custom-reset-class" id="reset"></i>
+        <i class="fa fa-play-circle custom-start-class" id="start"></i>
     </div>
 
     <h1 id= "title">It's time to Build! </h1>
 
     <div class="allImages">
-        <!-- <img src="" alt="allImages" id="allImageRight"> -->
         <img src="images/door.png" alt="door" id="door" class="hidden">
         <img src="images/roof.png" alt="roof" id="roof" class="hidden">
         <img src="images/window.png" alt="window" id="window"class="hidden">
@@ -28,7 +29,8 @@
 
     <div class="imagePart">
         <img src="" alt="imageCenter" id="imageCenter">
-        <button type="level" id="levelUp"> Level Up!</button>
+        <i class="fa fa-arrow-circle-right custom-level-class" id="levelUp"></i> 
+
         <!-- <img src="images/door.png" alt="door" class="hidden">
         <img src="images/house.png" alt="house" class="hidden">
         <img src="images/roof.png" alt="roof" class="hidden">
