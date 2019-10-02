@@ -140,14 +140,15 @@ function level2TaskIterations(){
         console.log(`level number is: ${level}`);
     } else if (level === 2 && task === 3){
         level2Task3Words();
-        imageCenter = `images/backpack.png`
+        imageCenter.src = `images/backpack.png`
         chairImage.style.display = 'inline-block';
-        deskImage.style.dispaly= 'inline-block';
+        deskImage.style.display= 'inline-block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     } else if (level === 2 && task === 4){
+        imageCenter.src = `images/classroom.png`;
         chairImage.style.display = 'inline-block';
-        deskImage.style.dispaly = 'inline-block';
+        deskImage.style.display = 'inline-block';
         backpackImage.style.display = 'inline-block';
         console.log("where the classroom image is inserted.");
         console.log("you've finished message");
