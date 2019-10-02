@@ -44,6 +44,10 @@ var imageCenter = document.getElementById("imageCenter");
 var doorImage = document.getElementById("door");
 var windowImage = document.getElementById("window");
 var roofImage = document.getElementById("roof");
+var backpackImage = document.getElementById("backpack");
+var chairImage = document.getElementById("chair")
+var deskImage = document.getElementById("desk");
+var classroomImage = document.getElementById("classroom");
 
 var levelUpButton = document.getElementById("levelUp");
 var resetButton = document.getElementById("reset");
@@ -123,20 +127,28 @@ function level1TaskIterations(){
 //Level 2 
 function level2TaskIterations(){
     if (level === 2 && task === 1){
-        imageCenter.src = ``;
         level2Task1Words();
+        imageCenter.src = `images/chair.png`
         // levelUpButton.style.display = 'none';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     } else if ( level === 2 && task === 2){
+        imageCenter.src=`images/desk.png`;
+        chairImage.style.display = 'inline-block';
         level2Task2Words();
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     } else if (level === 2 && task === 3){
         level2Task3Words();
+        imageCenter = `images/backpack.png`
+        chairImage.style.display = 'inline-block';
+        deskImage.style.dispaly= 'inline-block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     } else if (level === 2 && task === 4){
+        chairImage.style.display = 'inline-block';
+        deskImage.style.dispaly = 'inline-block';
+        backpackImage.style.display = 'inline-block';
         console.log("where the classroom image is inserted.");
         console.log("you've finished message");
         console.log(`task number is: ${task}`);
