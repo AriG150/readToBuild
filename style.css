@@ -17,8 +17,7 @@ h1{
     display: flex;
     color: rgb(212, 24, 34);
     outline-color: black;
-    font-size: 6em;
-    /* background-color: orange; */
+    font-size: 7em;
     text-align: center;
     align-items: center;
     justify-content: space-evenly; 
@@ -26,7 +25,6 @@ h1{
 
 footer{
     grid-area: footer;
-    /* background-color: rgb(214, 40, 214); */
 }
 
 /* ----- Button Sytling ----- */ 
@@ -38,20 +36,18 @@ footer{
     justify-content: space-evenly;
     text-align: center;
     align-items: center;
+    font-size: 5em;
+    cursor: pointer;
 }
 
 /* start button */ 
 .custom-start-class {
     color: rgb(247, 0, 247);
-    font-size: 5em;
-    cursor: pointer;
 }
 
 /* reset button */
 .custom-reset-class {
-    color: rgb(223, 4, 4);
-    font-size: 5em;
-    cursor: pointer;
+    color: rgba(204, 32, 32, 0.781);
 }
 
 /* level up button */ 
@@ -59,7 +55,6 @@ footer{
     color: rgb(122, 247, 73);
     font-size: 4em;
     display: none;
-    cursor: pointer;
 }
 
 

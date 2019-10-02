@@ -1,9 +1,10 @@
+console.log(level1LevelFinished);
 
-//Global Variables
+// ----- Global Variables ----- //
 var level = 0;
 var task = 0;
 
-// Word Choices per round and per Level 
+// ----- Word Choices per round and per Level ----- // 
 const level1 = {
     task1: {
         correct: 'door',
@@ -37,11 +38,8 @@ const level2 = {
     }
 }
 
-//DOM references //
-// var allImages = document.getElementsByClassName("allImages");
-// var allImageRight = document.getElementById("allImageRight");
-// var imageCenter = document.getElementById("imageCenter");
-
+// ----- DOM references ----- //
+// images //
 var doorImage = document.getElementById("door");
 var windowImage = document.getElementById("window");
 var roofImage = document.getElementById("roof");
@@ -50,13 +48,21 @@ var chairImage = document.getElementById("chair")
 var deskImage = document.getElementById("desk");
 var classroomImage = document.getElementById("classroom");
 
+// sounds // 
+// var correctSound = document.getElementById("correctSound");
+// var yes = document.getElementById("yes");
+var clickSound = document.getElementById("click");
+var winSound = document.getElementById("win");
+
+// button // 
 var levelUpButton = document.getElementById("levelUp");
 var resetButton = document.getElementById("reset");
 var startButton = document.getElementById("start");
 
-
+// title // 
 var title = document.getElementById("title");
 
+// words // 
 var words = document.getElementsByClassName("words");
 var wordBox = document.getElementById("wordBox");
 
@@ -120,8 +126,9 @@ function level1TaskIterations(){
         doorImage.style.display = 'inline-block';
         windowImage.style.display = 'inline-block';
         roofImage.style.display = 'inline-block';
-        //TODO: make `images/house.png` appear with setInterval 1000 miliseconds
         levelUpButton.style.display = 'block';
+        title.textContent = "You've won!"
+        winSound.play();
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     }
@@ -153,8 +160,8 @@ function level2TaskIterations(){
         chairImage.style.display = 'inline-block';
         deskImage.style.display = 'inline-block';
         backpackImage.style.display = 'inline-block';
-        console.log("where the classroom image is inserted.");
-        console.log("you've finished message");
+        winSound.play();
+        title.textContent = "You've won!"
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     }
@@ -185,7 +192,7 @@ function level1Task3Words(){
 }
 
 function level1LevelFinished(){
-    message.textContent = level1.task4;
+    incorrectField1.textContent = level1.task4.message;
 }
 
 // level 2 
@@ -220,13 +227,14 @@ function init (){
     imageCenter.src = `images/door.png`
     task = 1;
     level = 1;
-
+    clickSound.play();
     console.log(`task number is: ${task}`);
     console.log(`level number is: ${level}`);
 }
 
 function reset (){
     document.location.href= "";
+    clickSound.play();C
 }
 
 

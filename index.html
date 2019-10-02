@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="buttons">
-        <i class="fa fa-times-circle custom-reset-class" id="reset"></i>
+        <i class="fa fa-times custom-reset-class" id="reset"></i>
         <i class="fa fa-play-circle custom-start-class" id="start"></i>
     </div>
 
@@ -38,6 +38,7 @@
     </div>
 
     <div class="words" id="wordBox">
+        <p class = "winMessage"></p>
         <p class="individualWord" id="choice1"> </p>
         <p class="individualWord" id="choice2"> </p>
         <p class="individualWord" id="choice3"> </p>
@@ -45,6 +46,11 @@
     </div>
 
     <footer> Written by Ari Greif... </footer>
+
+    <audio id="correctSound" src="sounds/correctSound.mp3"></audio>
+    <audio id="yes" src="sounds/Correct.mp3"></audio>
+    <audio id= "click" src="sounds/click.mp3"></audio>
+    <audio id="win" src="sounds/winLevel.mp3"></audio>
     <script src="script.js"></script>
 </body>
 </html>
