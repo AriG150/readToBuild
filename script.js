@@ -69,7 +69,7 @@ var incorrectField3 = document.getElementById("choice4");
 
 //Event Listners 
 startButton.addEventListener('click', init);
-// resetButton.addEventListener('click', reset);
+resetButton.addEventListener('click', reset);
 
 //Click function. what happens when the correct word is clicked
 wordBox.addEventListener('click', function(e){
@@ -225,9 +225,9 @@ function init (){
     console.log(`level number is: ${level}`);
 }
 
-// function reset (){
-//     document.location.href= "";
-// }
+function reset (){
+    document.location.href= "";
+}
 
 
 
