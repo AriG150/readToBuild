@@ -16,6 +16,9 @@ const level1 = {
     task3: {
         correct: 'roof',
         incorrect: ['red', 'run', 'read']
+    },
+    task4:{
+        message: `You've completed level 1!`
     }
 }
 
@@ -60,7 +63,7 @@ var incorrectField3 = document.getElementById("choice4");
 
 //Event Listners 
 startButton.addEventListener('click', init);
-resetButton.addEventListener('click', reset);
+// resetButton.addEventListener('click', reset);
 
 //Click function. what happens when the correct word is clicked
 wordBox.addEventListener('click', function(e){
@@ -165,6 +168,10 @@ function level1Task3Words(){
     incorrectField3.textContent = level1.task3.incorrect[2];
 }
 
+function level1LevelFinished(){
+    message.textContent = level1.task4;
+}
+
 // level 2 
 function level2Task1Words(){
     correctField.textContent = level2.task1.correct;
@@ -205,17 +212,22 @@ function init (){
 //reset function
 // pop-up 'Are you sure you want to reset the game?'
 // call init();
-function reset (){
-    imageCenter.src = ``;
-    doorImage.style.display = 'none';
-    windowImage.style.display = 'none';
-    roofImage.style.display = 'none';
-    // task = 0;
-    // level = 1;
-    console.log(`task number is: ${task}`);
-    console.log(`level number is: ${level}`);
-    //TODO: remove words 
-}
+// function reset (){
+//     title.textContent = "It's time to Build!"
+//     imageCenter.src = `images/door.png`;
+//     level1Task1Words();
+//     task = 1;
+//     level = 1;
+//     levelUpButton.style.display = 'none';
+//     doorImage.style.display = 'none';
+//     windowImage.style.display = 'none';
+//     roofImage.style.display = 'none';
+//     console.log(`task number is: ${task}`);
+//     console.log(`level number is: ${level}`);
+//     //TODO: remove words 
+// }
+
+
 
 
 //End Level function // 
