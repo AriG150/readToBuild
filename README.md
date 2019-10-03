@@ -16,6 +16,8 @@ Method:  In every level the user is attempting to build an item. Every level is 
 ## Day 1 
 Spent the day considering the objectives of the game. I created the wireframing, flow chart, pseudocode, and images for the first level. I found myself very lost in past class assignments where I did not spend enough time psuedocoding, so I was very deliberate in the planning of this assignment. 
 
+![wireframing](images/buildToReadWireframing.jpg)
+
 ## Day 2
 Created the basics of the game: the HTML, CSS, and JavaScript for level 1. Spent the day implementing the click function for the different tasks within the level and having the images appear and dissapear where needed. 
 
