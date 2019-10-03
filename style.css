@@ -25,6 +25,8 @@ h1{
 
 footer{
     grid-area: footer;
+    font-size: 1.5em;
+    color: rgba(221, 206, 206, 0.842);
 }
 
 /* ----- Button Sytling ----- */ 
@@ -108,3 +110,9 @@ footer{
 .hidden{
     display: none;
 }
+
+
+/* ----- Footer logos ----- */
+/* .githubLogo{
+
+} */
