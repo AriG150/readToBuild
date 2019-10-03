@@ -85,9 +85,6 @@ wordBox.addEventListener('click', function(e){
     else if (e.target.id === "choice1" && level === 2){
         level2TaskIterations();
         task++
-        // TODO: if (task == 4){
-        //     gameover();
-        // }
     }
 });
 
@@ -100,9 +97,9 @@ levelUpButton.addEventListener('click', function(){
     level2TaskIterations();
     levelUpButton.style.display = 'none';
     title.textContent = "Build a Classroom!"
+    roofImage.style.display = 'none';
     doorImage.style.display = 'none';
     windowImage.style.display = 'none';
-    roofImage.style.display = 'none';
 })
 
 
@@ -238,8 +235,9 @@ function init (){
 
 //Reset function//
 function reset (){
-    document.location.href= "";
     clickSound.play();
+    document.location.href= "";
+    //set everything like wordbox to be empty, 
 }
 
 
