@@ -1,7 +1,7 @@
 # ** Read to Build** 
 ## General Assembly Project 1 - Creating a game to help young minds practice reading. 
 
-Link to the live game: 
+Link to the live game: https://arig150.github.io/readToBuild/
 
 ## Purpose of the project:
 When assigned this project I decided to stear away from violent games and create something that could have a longer lasting impact on the player. After considering different options, I decided to create a game to help young children practice their reading comprehension.  
