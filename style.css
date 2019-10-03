@@ -105,4 +105,6 @@ footer{
     cursor: pointer;
 }
 
-
+.hidden{
+    display: none;
+}

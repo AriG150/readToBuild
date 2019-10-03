@@ -1,8 +1,8 @@
-console.log(level1LevelFinished);
 
 // ----- Global Variables ----- //
 var level = 0;
 var task = 0;
+
 
 // ----- Word Choices per round and per Level ----- // 
 const level1 = {
@@ -17,9 +17,6 @@ const level1 = {
     task3: {
         correct: 'roof',
         incorrect: ['red', 'run', 'read']
-    },
-    task4:{
-        message: `You've completed level 1!`
     }
 }
 
@@ -40,6 +37,8 @@ const level2 = {
 
 // ----- DOM references ----- //
 // images //
+var imagePart = document.getElementById("imagePart");
+
 var doorImage = document.getElementById("door");
 var windowImage = document.getElementById("window");
 var roofImage = document.getElementById("roof");
@@ -53,6 +52,7 @@ var classroomImage = document.getElementById("classroom");
 // var yes = document.getElementById("yes");
 var clickSound = document.getElementById("click");
 var winSound = document.getElementById("win");
+var crowdYaySound = document.getElementById("crowdYay");
 
 // button // 
 var levelUpButton = document.getElementById("levelUp");
@@ -63,7 +63,6 @@ var startButton = document.getElementById("start");
 var title = document.getElementById("title");
 
 // words // 
-var words = document.getElementsByClassName("words");
 var wordBox = document.getElementById("wordBox");
 
 var correctField = document.getElementById("choice1");
@@ -77,7 +76,7 @@ var incorrectField3 = document.getElementById("choice4");
 startButton.addEventListener('click', init);
 resetButton.addEventListener('click', reset);
 
-//Click function. what happens when the correct word is clicked
+//correct word clicked // 
 wordBox.addEventListener('click', function(e){
     if (e.target.id === "choice1" && level === 1){
         level1TaskIterations();
@@ -92,43 +91,48 @@ wordBox.addEventListener('click', function(e){
     }
 });
 
-
+//level up button// 
 levelUpButton.addEventListener('click', function(){
     level = 2;
     task = 1;  
+    wordBox.classList.remove("hidden")
+    wordBox.classList.add("words")
     level2TaskIterations();
     levelUpButton.style.display = 'none';
     title.textContent = "Build a Classroom!"
     doorImage.style.display = 'none';
-        windowImage.style.display = 'none';
-        roofImage.style.display = 'none';
+    windowImage.style.display = 'none';
+    roofImage.style.display = 'none';
 })
 
 
 
 // Level 1 
 function level1TaskIterations(){
-    if (level === 1 && task === 2){
+    if (level === 1 && task === 1){
         level1Task2Words();
         imageCenter.src = `images/window.png`;
         doorImage.style.display = 'inline-block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
-    } else if (level === 1 && task === 3){
+    } else if (level === 1 && task === 2){
         level1Task3Words();
         imageCenter.src = `images/roof.png`;
         doorImage.style.display = 'inline-block';
         windowImage.style.display = 'inline-block';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
-    } else if (level === 1 && task == 4) {
+    } else if (level === 1 && task == 3) {
         imageCenter.src = `images/house.png`;
         doorImage.style.display = 'inline-block';
         windowImage.style.display = 'inline-block';
         roofImage.style.display = 'inline-block';
         levelUpButton.style.display = 'block';
         title.textContent = "You've won!"
+        wordBox.classList.remove("words");
+        wordBox.classList.add("hidden")
         winSound.play();
+        crowdYaySound.play();
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     }
@@ -139,7 +143,6 @@ function level2TaskIterations(){
     if (level === 2 && task === 1){
         level2Task1Words();
         imageCenter.src = `images/chair.png`
-        // levelUpButton.style.display = 'none';
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
     } else if ( level === 2 && task === 2){
@@ -160,7 +163,10 @@ function level2TaskIterations(){
         chairImage.style.display = 'inline-block';
         deskImage.style.display = 'inline-block';
         backpackImage.style.display = 'inline-block';
+        wordBox.classList.remove("words");
+        wordBox.classList.add("hidden")
         winSound.play();
+        crowdYaySound.play();
         title.textContent = "You've won!"
         console.log(`task number is: ${task}`);
         console.log(`level number is: ${level}`);
@@ -191,9 +197,6 @@ function level1Task3Words(){
     incorrectField3.textContent = level1.task3.incorrect[2];
 }
 
-function level1LevelFinished(){
-    incorrectField1.textContent = level1.task4.message;
-}
 
 // level 2 
 function level2Task1Words(){
@@ -217,12 +220,13 @@ function level2Task3Words(){
     incorrectField3.textContent = level2.task3.incorrect[2];
 }
 
-//Functions//
 
+// ----- Functions ----- //
 
 //Game Init Function//
 function init (){
     title.textContent = "Build a House!"
+    imagePart.classList.remove("hidden")
     level1Task1Words();
     imageCenter.src = `images/door.png`
     task = 1;
@@ -235,7 +239,7 @@ function init (){
 //Reset function//
 function reset (){
     document.location.href= "";
-    clickSound.play();C
+    clickSound.play();
 }
 
 
