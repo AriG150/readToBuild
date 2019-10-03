@@ -167,7 +167,7 @@ function level2TaskIterations(){
     }
 }
 
-//Accessing words per given level  //
+// ----- Accessing words per given level ----- //
 
 //level 1 
 function level1Task1Words(){
@@ -232,17 +232,12 @@ function init (){
     console.log(`level number is: ${level}`);
 }
 
+//Reset function//
 function reset (){
     document.location.href= "";
     clickSound.play();C
 }
 
-
-
-//End Level function // 
-//if array allImage.length is 3 (ie has door, window, and roof) game has finished 
-// strech: make pop-up "You've finished the first level. Congradulations. Get ready for level 2!"
-// load second level after 10 seconds 
 
 
 

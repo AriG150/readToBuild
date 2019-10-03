@@ -55,6 +55,7 @@ footer{
     color: rgb(122, 247, 73);
     font-size: 4em;
     display: none;
+    cursor: pointer;
 }
 
 
