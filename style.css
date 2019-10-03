@@ -25,7 +25,7 @@ h1{
 
 footer{
     grid-area: footer;
-    font-size: 1.5em;
+    font-size: 1.75em;
     color: rgba(221, 206, 206, 0.842);
 }
 
@@ -94,25 +94,26 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     
 }
 
 .individualWord{
     width: calc(100%/4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
     color: white;
     font-size: 5em;
-    cursor: pointer;
 }
 
 .hidden{
     display: none;
 }
 
+/* ----- logos in footer ----- */ 
+.githubLogo{
+    color: white;
+}
 
-/* ----- Footer logos ----- */
-/* .githubLogo{
-
-} */
+.linkedinLogo{
+    color: white;
+}
