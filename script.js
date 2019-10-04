@@ -48,13 +48,6 @@ var chairImage = document.getElementById("chair")
 var deskImage = document.getElementById("desk");
 var classroomImage = document.getElementById("classroom");
 
-// sounds // 
-// var correctSound = document.getElementById("correctSound");
-// var yes = document.getElementById("yes");
-var clickSound = document.getElementById("click");
-var winSound = document.getElementById("win");
-var crowdYaySound = document.getElementById("crowdYay");
-
 // button // 
 var levelUpButton = document.getElementById("levelUp");
 var resetButton = document.getElementById("reset");
@@ -65,12 +58,16 @@ var title = document.getElementById("title");
 
 // words // 
 var wordBox = document.getElementById("wordBox");
-
 var correctField = document.getElementById("choice1");
 var incorrectField1 = document.getElementById("choice2");
 var incorrectField2 = document.getElementById("choice3");
 var incorrectField3 = document.getElementById("choice4");
 
+// sounds // 
+var ding = document.getElementById("Correct");
+var clickSound = document.getElementById("click");
+var winSound = document.getElementById("win");
+var crowdYaySound = document.getElementById("crowdYay");
 
 
 // ----- Event Listners ----- //
@@ -100,6 +97,7 @@ levelUpButton.addEventListener('click', function(){
     roofImage.style.display = 'none';
     doorImage.style.display = 'none';
     windowImage.style.display = 'none';
+    ding.play()
 })
 
 
