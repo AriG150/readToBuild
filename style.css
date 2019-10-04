@@ -61,7 +61,6 @@ footer{
 }
 
 
-
 /* ----- Image Styling ----- */ 
 
 .allImages{
@@ -82,11 +81,9 @@ footer{
     flex-direction: column;
 }
 
-
 .hidden{
     display: none;
 }
-
 
 /* ----- Word Styling ----- */ 
 .words{

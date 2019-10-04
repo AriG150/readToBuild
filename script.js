@@ -3,7 +3,6 @@
 var level = 0;
 var task = 0;
 
-
 // ----- Word Choices per round and per Level ----- // 
 const level1 = {
     task1: {
@@ -99,7 +98,6 @@ levelUpButton.addEventListener('click', function(){
     windowImage.style.display = 'none';
     ding.play()
 })
-
 
 
 // Level 1 
@@ -233,8 +231,3 @@ function reset (){
     deskImage.style.display = 'none';
     backpackImage.style.display = 'none';
 }
-
-
-
-
-
