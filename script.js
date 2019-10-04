@@ -73,7 +73,7 @@ var incorrectField3 = document.getElementById("choice4");
 
 
 
-//Event Listners 
+// ----- Event Listners ----- //
 startButton.addEventListener('click', init);
 resetButton.addEventListener('click', reset);
 
@@ -110,15 +110,11 @@ function level1TaskIterations(){
         level1Task2Words();
         imageCenter.src = `images/window.png`;
         doorImage.style.display = 'inline-block';
-        // console.log(`task number is: ${task}`);
-        // console.log(`level number is: ${level}`);
     } else if (level === 1 && task === 2){
         level1Task3Words();
         imageCenter.src = `images/roof.png`;
         doorImage.style.display = 'inline-block';
         windowImage.style.display = 'inline-block';
-        // console.log(`task number is: ${task}`);
-        // console.log(`level number is: ${level}`);
     } else if (level === 1 && task == 3) {
         imageCenter.src = `images/house.png`;
         doorImage.style.display = 'inline-block';
@@ -129,8 +125,6 @@ function level1TaskIterations(){
         wordBox.classList.add("hidden")
         winSound.play();
         crowdYaySound.play();
-        // console.log(`task number is: ${task}`);
-        // console.log(`level number is: ${level}`);
     }
 }
 
@@ -139,21 +133,15 @@ function level2TaskIterations(){
     if (level === 2 && task === 1){
         level2Task1Words();
         imageCenter.src = `images/chair.png`
-        // console.log(`task number is: ${task}`);
-        // console.log(`level number is: ${level}`);
     } else if ( level === 2 && task === 2){
         imageCenter.src=`images/desk.png`;
         chairImage.style.display = 'inline-block';
         level2Task2Words();
-        // console.log(`task number is: ${task}`);
-        // console.log(`level number is: ${level}`);
     } else if (level === 2 && task === 3){
         level2Task3Words();
         imageCenter.src = `images/backpack.png`
         chairImage.style.display = 'inline-block';
         deskImage.style.display= 'inline-block';
-        // console.log(`task number is: ${task}`);
-        // console.log(`level number is: ${level}`);
     } else if (level === 2 && task === 4){
         imageCenter.src = `images/classroom.png`;
         chairImage.style.display = 'inline-block';
@@ -163,8 +151,6 @@ function level2TaskIterations(){
         winSound.play();
         crowdYaySound.play();
         title.textContent = "You've won!"
-        // console.log(`task number is: ${task}`);
-        // console.log(`level number is: ${level}`);
     }
 }
 
@@ -234,8 +220,6 @@ function init (){
     task = 1;
     level = 1;
     clickSound.play();
-    // console.log(`task number is: ${task}`);
-    // console.log(`level number is: ${level}`);
 }
 
 //Reset function//
